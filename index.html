@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vilar Store | Catálogo Completo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Vilar<span>Store</span></a>
+      
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar entre 30 produtos...">
+      </div>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-btn" title="Alternar Tema Claro/Escuro">🌙</button>
+        <button id="cartBtn" class="cart-btn">
+          🛒 Carrinho <span id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container main-layout">
+    
+    <!-- FILTROS LATERAL -->
+    <aside class="filters-sidebar">
+      <h3>Filtros</h3>
+      
+      <div class="filter-group">
+        <label for="categoryFilter">Categoria</label>
+        <select id="categoryFilter">
+          <option value="all">Todas as Categorias (30)</option>
+          <option value="Vestuário">Vestuário</option>
+          <option value="Calçados">Calçados</option>
+          <option value="Acessórios">Acessórios</option>
+          <option value="Equipamentos">Equipamentos</option>
+          <option value="Eletrônicos">Eletrônicos</option>
+          <option value="Nutrição">Nutrição</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="priceFilter">Preço Máximo: R$ <span id="priceVal">1200</span></label>
+        <input type="range" id="priceFilter" min="50" max="1200" step="50" value="1200">
+      </div>
+
+      <button id="resetFilters" class="btn btn-outline btn-block">Limpar Filtros</button>
+    </aside>
+
+    <!-- GRADE DE PRODUTOS -->
+    <section class="products-section">
+      <div id="productsGrid" class="products-grid">
+        <!-- Renderizado dinamicamente via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR DO CARRINHO -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Seu Carrinho</h2>
+        <button id="closeCart" class="close-btn">&times;</button>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <!-- Itens dinâmicos -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <strong id="cartTotalPrice">R$ 0,00</strong>
+        </div>
+        <button id="checkoutBtn" class="btn btn-primary btn-block">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
